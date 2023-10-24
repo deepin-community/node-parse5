@@ -1,4 +1,21 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	ln -s ../packages/parse5 node_modules/ || true
+	set -e; for d in parse5 parse5-parser-stream parse5-sax-parser parse5-plain-text-conversion-stream parse5-html-rewriting-stream parse5-htmlparser2-tree-adapter; do \
+		(cd packages/$$d; \
+		echo building $$d; \
+		tsc -b; \
+		if pkgjs-pjson . scripts build:cjs 2>/dev/null; then pkgjs-run build:cjs; fi); \
+	done
+
+override_dh_installdocs:
+	dh_installdocs
+	dh_nodejs_autodocs auto_dispatch

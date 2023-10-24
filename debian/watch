@@ -1,0 +1,6 @@
+version=4
+opts=\
+dversionmangle=auto,\
+repacksuffix=+dfsg,\
+filenamemangle=s/.+\/v?(\d\S+)@ARCHIVE_EXT@/parse5-$1\.tar\.gz/ \
+ https://github.com/inikulin/parse5/tags .*/v?(\d\S+)\.tar\.gz

@@ -1,0 +1,7 @@
+node_modules/
+packages/*/dist/
+packages/*/tsconfig.tsbuildinfo
+packages/*/node_modules/
+packages/parse5/parse5
+test/dist/
+test/tsconfig.tsbuildinfo

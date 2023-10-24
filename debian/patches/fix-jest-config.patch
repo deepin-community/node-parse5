@@ -1,0 +1,16 @@
+Description: fix jest config
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-06-26
+
+--- a/package.json
++++ b/package.json
+@@ -67,7 +67,7 @@
+         "moduleNameMapper": {
+             "^(parse5[^/]*)/dist/(.*?)(?:\\.js)?$": "<rootDir>/packages/$1/lib/$2",
+             "^(parse5[^/]*)$": "<rootDir>/packages/$1/lib/index.ts",
+-            "^(.*)\\.js$": [
++            "^((?:\\.|parse5).*)\\.js$": [
+                 "$1",
+                 "$1.js"
+             ]

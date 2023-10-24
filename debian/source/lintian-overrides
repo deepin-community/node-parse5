@@ -1,0 +1,3 @@
+# Test data
+source-is-missing *test/*
+very-long-line-length-in-source-file *test/*

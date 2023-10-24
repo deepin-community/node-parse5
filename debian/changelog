@@ -1,5 +1,65 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-parse5 (7.1.2+dfsg-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * Add missing Breaks+Replaces against node-cheerio (Closes: #1034984)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Yadd <yadd@debian.org>  Fri, 28 Apr 2023 06:58:41 +0400
+
+node-parse5 (7.1.2+dfsg-1) unstable; urgency=medium
+
+  * Apply multi-arch hints (foreign)
+  * New upstream version 7.1.2+dfsg
+  * Unfuzz patches
+
+ -- Yadd <yadd@debian.org>  Fri, 25 Nov 2022 14:49:46 +0100
+
+node-parse5 (7.1.0+dfsg-3) unstable; urgency=medium
+
+  * Fix test
+
+ -- Yadd <yadd@debian.org>  Mon, 05 Sep 2022 12:23:02 +0200
+
+node-parse5 (7.1.0+dfsg-2) unstable; urgency=medium
+
+  * Fix commonjs install
+
+ -- Yadd <yadd@debian.org>  Mon, 05 Sep 2022 11:52:18 +0200
+
+node-parse5 (7.1.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 7.1.0+dfsg
+  * Refresh jest patch
+  * Fix tsconfig
+
+ -- Yadd <yadd@debian.org>  Mon, 05 Sep 2022 10:44:42 +0200
+
+node-parse5 (7.0.0+dfsg-5) unstable; urgency=medium
+
+  * Add breaks node-jsdom < 20.0.0+repack1~ in all packages (Closes: #1014739)
+
+ -- Yadd <yadd@debian.org>  Mon, 11 Jul 2022 08:02:46 +0200
+
+node-parse5 (7.0.0+dfsg-4) unstable; urgency=medium
+
+  * Drop bad Provides field
+
+ -- Yadd <yadd@debian.org>  Sat, 09 Jul 2022 08:45:11 +0200
+
+node-parse5 (7.0.0+dfsg-3) unstable; urgency=medium
+
+  * Fix autopkgtest
+
+ -- Yadd <yadd@debian.org>  Fri, 08 Jul 2022 06:49:40 +0200
+
+node-parse5 (7.0.0+dfsg-2) unstable; urgency=medium
+
+  * Add breaks: node-jsdom < 20.0.0+repack1~
+  * Back to unstable
+
+ -- Yadd <yadd@debian.org>  Thu, 07 Jul 2022 08:55:49 +0200
+
+node-parse5 (7.0.0+dfsg-1) experimental; urgency=medium
+
+  * Initial release (Closes: #923705)
+
+ -- Yadd <yadd@debian.org>  Mon, 27 Jun 2022 01:20:41 +0200

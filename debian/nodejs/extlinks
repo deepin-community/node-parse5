@@ -1,0 +1,6 @@
+domhandler
+entities
+@jest/globals	test
+ts-jest		test
+@types/jest	test
+@types/node

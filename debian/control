@@ -1,15 +1,112 @@
-Source: template-repository
-Section: unknown
+Source: node-parse5
+Section: javascript
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Yadd <yadd@debian.org>
+Testsuite: autopkgtest-pkg-nodejs
+Build-Depends:
+ debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , jest <!nocheck>
+ , node-domhandler
+ , node-entities
+ , node-typescript
+ , ts-jest <!nocheck>
+ , dh-nodejs
+Standards-Version: 4.6.1
+Homepage: https://github.com/inikulin/parse5
+Vcs-Git: https://salsa.debian.org/js-team/node-parse5.git
+Vcs-Browser: https://salsa.debian.org/js-team/node-parse5
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-parse5
+Architecture: all
+Depends: ${misc:Depends}
+ , node-entities (>= 4.3.0)
+Breaks: node-jsdom (<< 20.0.0+repack1~)
+Replaces: node-jsdom (<< 20.0.0+repack1~)
+Multi-Arch: foreign
+Description: HTML parser and serializer for Node.js
+ Parse5 provides nearly everything needed when dealing with HTML. It's the
+ fastest spec-compliant HTML parser for Node.js to date. It parses HTML the
+ way the latest version of browsers does. It has proven itself reliable in
+ such projects as jsdom, Angular, Lit, Cheerio, rehype and many more.
+ .
+ This package provides a HTML parser and serializer.
+
+Package: node-parse5-htmlparser2-tree-adapter
+Architecture: all
+Depends: ${misc:Depends}
+ , node-domhandler
+ , node-parse5
+Breaks: node-jsdom (<< 20.0.0+repack1~)
+ , node-cheerio (<< 1.0.0~rc~10+repack-1~)
+Replaces: node-jsdom (<< 20.0.0+repack1~)
+ , node-cheerio (<< 1.0.0~rc~10+repack-1~)
+Description: node-htmlparser2 tree adapter
+ Parse5 provides nearly everything needed when dealing with HTML. It's the
+ fastest spec-compliant HTML parser for Node.js to date. It parses HTML the
+ way the latest version of browsers does. It has proven itself reliable in
+ such projects as jsdom, Angular, Lit, Cheerio, rehype and many more.
+ .
+ This package provides the node-htmlparser2 tree adapter.
+
+Package: node-parse5-html-rewriting-stream
+Architecture: all
+Depends: ${misc:Depends}
+ , node-entities (>= 4.3.0)
+ , node-parse5
+ , node-parse5-sax-parser
+Breaks: node-jsdom (<< 20.0.0+repack1~)
+Replaces: node-jsdom (<< 20.0.0+repack1~)
+Description: Streaming HTML rewriter for Node.js
+ Parse5 provides nearly everything needed when dealing with HTML. It's the
+ fastest spec-compliant HTML parser for Node.js to date. It parses HTML the
+ way the latest version of browsers does. It has proven itself reliable in
+ such projects as jsdom, Angular, Lit, Cheerio, rehype and many more.
+ .
+ This package provides a streaming HTML rewriter.
+
+Package: node-parse5-parser-stream
+Architecture: all
+Depends: ${misc:Depends}
+ , node-parse5
+Breaks: node-jsdom (<< 20.0.0+repack1~)
+Replaces: node-jsdom (<< 20.0.0+repack1~)
+Description: Streaming HTML parser with scripting support for Node.js
+ Parse5 provides nearly everything needed when dealing with HTML. It's the
+ fastest spec-compliant HTML parser for Node.js to date. It parses HTML the
+ way the latest version of browsers does. It has proven itself reliable in
+ such projects as jsdom, Angular, Lit, Cheerio, rehype and many more.
+ .
+ This package provides a streaming HTML parser with scripting support.
+
+Package: node-parse5-plain-text-conversion-stream
+Architecture: all
+Depends: ${misc:Depends}
+ , node-parse5
+ , node-parse5-parser-stream
+Breaks: node-jsdom (<< 20.0.0+repack1~)
+Replaces: node-jsdom (<< 20.0.0+repack1~)
+Description: Stream that converts plain text files into HTML documents for Node.js
+ Parse5 provides nearly everything needed when dealing with HTML. It's the
+ fastest spec-compliant HTML parser for Node.js to date. It parses HTML the
+ way the latest version of browsers does. It has proven itself reliable in
+ such projects as jsdom, Angular, Lit, Cheerio, rehype and many more.
+ .
+ This package provides a stream that converts plain text files into HTML
+ documents.
+
+Package: node-parse5-sax-parser
+Architecture: all
+Depends: ${misc:Depends}
+ , node-parse5
+Breaks: node-jsdom (<< 20.0.0+repack1~)
+Replaces: node-jsdom (<< 20.0.0+repack1~)
+Description: Streaming SAX-style HTML parser for Node.js
+ Parse5 provides nearly everything needed when dealing with HTML. It's the
+ fastest spec-compliant HTML parser for Node.js to date. It parses HTML the
+ way the latest version of browsers does. It has proven itself reliable in
+ such projects as jsdom, Angular, Lit, Cheerio, rehype and many more.
+ .
+ This package provides a streaming SAX-style HTML parser.

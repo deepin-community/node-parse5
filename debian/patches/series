@@ -1,0 +1,3 @@
+fix-jest-config.patch
+fix-tsconfig.patch
+fix-cjs-install.patch

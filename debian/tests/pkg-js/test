@@ -1,0 +1,14 @@
+if test "$AUTOPKGTEST_TMP" != ""; then
+	for p in `ls packages`; do
+		cp -a /usr/share/nodejs/$p/dist packages/$p/
+		rm -rf node_modules/$p
+		ln -s ../packages/$p node_modules
+	done
+fi
+(cd test && tsc)
+ln -s ../test node_modules/parse5-test-utils
+jest --modulePathIgnorePatterns .pc --ci --testRegex \
+	packages/parse5/lib/parser/formatting-element-list.test.ts \
+	packages/parse5/lib/tokenizer/tokenizer-location-info.test.ts \
+	packages/parse5/lib/parser/open-element-stack.test.ts \
+	packages/parse5-plain-text-conversion-stream/test/plain-text-conversion-stream.test.ts
